@@ -1,3 +1,4 @@
+﻿stack = [3]
 import sys
 import math
 input = sys.argv[0]
@@ -61,6 +62,7 @@ def twoArgs(a,b,c):
 	return twoArgDict[a][1](b,c)
 
 def runOne(a):
+        stack.append(oneArgs(a,stack.pop()))
 
 def runRegEx():
         return 0
