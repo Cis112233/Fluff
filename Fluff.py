@@ -1,4 +1,3 @@
-﻿stack = [1]
 import sys
 import math
 input = sys.argv[0]
@@ -16,6 +15,13 @@ def noArgs(a):#Please don't judge. Even noArgs need a heading
         return noArgDict[a][1]()
 def factorial(a):
         return math.factorial(a)
+def power(a,b):
+	return pow(a,b)
+
+def multi(a,b):
+	return a*b
+def mods(a,b):
+        return mod(a,b)
 noArgDict = {
 "":""
 
@@ -38,9 +44,9 @@ oneArgDict = {
 "":"",
 }
 twoArgDict = {
-"^":"power",
-"%":"mods",
-"*":"multi",
+"^":power,
+"%":mods,
+"*":multi,
 "":"",
 "":"",
 "":"",
@@ -53,21 +59,17 @@ def oneArgs(a,b):#OK IT NEEDS 2 ARGS SO WE KNOW WHAT IT IS TALKING ABOUT STOP JU
 
 def twoArgs(a,b,c):
 	return twoArgDict[a][1](b,c)
-def power(a,b):
-	return a^b
 
-def multi(a,b):
-	return a*b
-def mods(a,b):
-        return mod(a,b)
+def runOne(a):
 
 def runRegEx():
         return 0
 
 
-print(oneArgs("!",2))
+runOne("!")
+print (stack)
 
-
+print(oneArgDict["!"](3))
 
 #funcs = {
  #   "!": factorial,
